@@ -3,96 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ABVP Yuvati Sammelan | Kothrud Vibhag</title>
-
+    <title>संवादिनी – युवती संमेलन | ABVP Kothrud</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
+    <header class="navbar home-navbar">
 
-            <div class="logo">
-                ABVP
+        <div class="logo-area">
+            <img src="images/abvp-logo.png" alt="ABVP" class="navbar-logo">
+            <div class="navbar-title">
+                <span class="navbar-title-main">संवादिनी</span>
+                <span class="navbar-title-sub">युवती संमेलन</span>
             </div>
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#registration">Registration</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-
-                <li>
-                    <select id="language-selector">
-                        <option value="en">English</option>
-                        <option value="mr">मराठी</option>
-                        <option value="hi">हिन्दी</option>
-                    </select>
-                </li>
-            </ul>
-
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="registration.html">Registration</a>
+            <a href="programs.html">Programs</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <select class="language-selector">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिन्दी</option>
+            </select>
         </nav>
+
     </header>
 
+    <main class="home-section">
 
-    <!-- Hero / Home Section -->
-    <main>
+        <img src="images/abvp-logo.png" alt="" class="abvp-full-background">
 
-        <section id="home" class="hero">
+        <div class="logo-half">
+            <img src="images/sammelan-logo.png" alt="संवादिनी – युवती संमेलन" class="sammelan-side-logo">
+        </div>
 
-            <div class="hero-background">
-                ABVP
-            </div>
+        <div class="text-half">
+            <section class="hero-content">
+                <p class="event-organizer">अखिल भारतीय विद्यार्थी परिषद</p>
+                <h1>युवती संमेलन</h1>
+                <p class="location">कोथरूड भाग</p>
+                <div class="gold-line"></div>
+                <p class="tagline">संकल्प से सिद्धि, नारी से नवभारत</p>
 
-            <div class="hero-content">
-
-                <p class="event-label">
-                    Kothrud Vibhag Presents
-                </p>
-
-                <h1>
-                    YUVATI<br>
-                    SAMMELAN
-                </h1>
-
-                <p class="hero-description">
-                    Empowering young women to connect, learn,
-                    participate and lead.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#registration" class="btn primary-btn">
-                        Register Now
-                    </a>
-
-                    <a href="#programs" class="btn secondary-btn">
-                        Explore Programs
-                    </a>
+                <div class="event-highlight">
+                    <span class="event-highlight-title">आगामी युवती संमेलन</span>
                 </div>
 
-            </div>
+                <p class="welcome-text">
+                    युवतींच्या विचारांना, स्वप्नांना आणि
+                    सामर्थ्याला एक नवी दिशा देण्यासाठी,
+                    संवाद, विचारांची देवाणघेवाण आणि
+                    प्रेरणादायी अनुभवांच्या माध्यमातून
+                    एकत्र येण्याची ही सुंदर संधी आहे.
+                </p>
 
-        </section>
-
-
-        <!-- More sections will be added here -->
+                <a href="registration.html" class="register-button">Register Now</a>
+            </section>
+        </div>
 
     </main>
-
-
-    <!-- Footer -->
-    <footer>
-        <p>
-            © 2026 ABVP Kothrud Vibhag. All rights reserved.
-        </p>
-    </footer>
-
-
-    <script src="js/script.js"></script>
 
 </body>
 </html>
