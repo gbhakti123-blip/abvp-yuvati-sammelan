@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | संवादिनी – युवती संमेलन</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ============================================
+           CONTACT PAGE
+        ============================================ */
+
+        .contact-page {
+            min-height: calc(100vh - 90px);
+            position: relative;
+            padding: 45px 8% 60px;
+            overflow: hidden;
+            background: #f8f4e8;
+        }
+
+
+        /* ============================================
+           PAGE HEADING
+        ============================================ */
+
+        .contact-header {
+            position: relative;
+
+            z-index: 1;
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .contact-header h1 {
+            color: #641a4d;
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-gold-line {
+            width: 90px;
+
+            height: 4px;
+
+            background: #d5a63a;
+
+            border-radius: 5px;
+
+            margin: 0 auto 12px;
+        }
+
+        .contact-header p {
+            color: #555;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ============================================
+           MAIN CONTACT CONTAINER
+        ============================================ */
+
+        .contact-container {
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /* ============================================
+           CONTACT CARD
+        ============================================ */
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.92);
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            box-shadow: 0 8px 25px rgba(80, 35, 65, 0.10);
+
+            border: 1px solid rgba(100, 26, 77, 0.08);
+        }
+
+        .contact-card h2 {
+            color: #641a4d;
+
+            font-size: 24px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ============================================
+           CONTACT PERSON
+        ============================================ */
+
+        .contact-person {
+            display: flex;
+
+            align-items: center;
+
+            gap: 17px;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-person:last-child {
+            border-bottom: none;
+        }
+
+
+        /* ============================================
+           PERSON ICON
+        ============================================ */
+
+        .person-icon {
+            width: 52px;
+
+            height: 52px;
+
+            min-width: 52px;
+
+            border-radius: 50%;
+
+            background: #641a4d;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow: 0 4px 10px rgba(100, 26, 77, 0.18);
+        }
+
+        .person-icon svg {
+            width: 27px;
+
+            height: 27px;
+
+            fill: none;
+
+            stroke: white;
+
+            stroke-width: 1.8;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        /* ============================================
+           PERSON INFORMATION
+        ============================================ */
+
+        .person-info h3 {
+            color: #292929;
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .person-info a {
+            color: #641a4d;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+        .person-info a:hover {
+            color: #a67616;
+
+            text-decoration: underline;
+        }
+
+
+        /* ============================================
+           SOCIAL MEDIA CARD
+        ============================================ */
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.92);
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            box-shadow: 0 8px 25px rgba(80, 35, 65, 0.10);
+
+            border: 1px solid rgba(100, 26, 77, 0.08);
+        }
+
+        .social-card h2 {
+            color: #641a4d;
+
+            font-size: 24px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ============================================
+           SOCIAL ITEMS
+        ============================================ */
+
+        .social-links {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .social-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 14px 16px;
+
+            border-radius: 12px;
+
+            background: #faf8f2;
+
+            text-decoration: none;
+
+            color: #292929;
+
+            border: 1px solid #eee;
+
+            transition: all 0.25s ease;
+        }
+
+        .social-item:hover {
+            transform: translateX(5px);
+
+            background: #f4edf1;
+
+            border-color: #d5a63a;
+
+            box-shadow: 0 5px 15px rgba(100, 26, 77, 0.08);
+        }
+
+
+        /* ============================================
+           SOCIAL ICONS
+        ============================================ */
+
+        .social-icon {
+            width: 45px;
+
+            height: 45px;
+
+            min-width: 45px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+        .instagram-icon {
+            background: #641a4d;
+        }
+
+        .x-icon {
+            background: #222;
+        }
+
+        .facebook-icon {
+            background: #641a4d;
+        }
+
+
+        /* Instagram SVG */
+
+        .instagram-icon svg {
+            width: 24px;
+
+            height: 24px;
+
+            fill: none;
+
+            stroke: white;
+
+            stroke-width: 2;
+        }
+
+
+        /* X SVG */
+
+        .x-icon svg {
+            width: 21px;
+
+            height: 21px;
+
+            fill: white;
+        }
+
+
+        /* Facebook SVG */
+
+        .facebook-icon svg {
+            width: 22px;
+
+            height: 22px;
+
+            fill: white;
+        }
+
+
+        /* ============================================
+           SOCIAL TEXT
+        ============================================ */
+
+        .social-text {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 3px;
+        }
+
+        .social-text strong {
+            color: #292929;
+
+            font-size: 16px;
+        }
+
+        .social-text span {
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ============================================
+           BOTTOM MESSAGE
+           KEPT AS BEFORE
+        ============================================ */
+
+        .contact-message {
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1100px;
+
+            margin: 30px auto 0;
+
+            padding: 20px 25px;
+
+            background: #641a4d;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 8px 20px rgba(100, 26, 77, 0.18);
+        }
+
+        .contact-message p {
+            margin: 0;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+        .contact-message strong {
+            color: #f0c85a;
+        }
+
+
+        /* ============================================
+           MOBILE RESPONSIVE
+        ============================================ */
+
+        @media (max-width: 800px) {
+
+            .contact-page {
+                padding: 35px 5% 45px;
+            }
+
+            .contact-header h1 {
+                font-size: 32px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .contact-card,
+            .social-card {
+                padding: 23px;
+            }
+
+            .contact-background-logo {
+                width: 400px;
+
+                height: 400px;
+
+                right: -130px;
+
+                bottom: -100px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .contact-header h1 {
+                font-size: 28px;
+            }
+
+            .contact-header p {
+                font-size: 14px;
+            }
+
+            .person-icon {
+                width: 48px;
+
+                height: 48px;
+
+                min-width: 48px;
+            }
+
+            .person-info h3 {
+                font-size: 16px;
+            }
+
+            .social-item {
+                padding: 12px;
+            }
+
+            .social-icon {
+                width: 42px;
+
+                height: 42px;
+
+                min-width: 42px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ============================================
+         NAVIGATION BAR
+    ============================================ -->
+
+    <header class="navbar home-navbar">
+
+        <div class="logo-area">
+
+            <img
+                src="images/abvp-logo.png"
+                alt="ABVP"
+                class="navbar-logo"
+            >
+
+            <div class="navbar-title">
+
+                <span class="navbar-title-main">
+                    संवादिनी
+                </span>
+
+                <span
+                    class="navbar-title-sub"
+                    data-i18n="navbar_title_sub"
+                >
+                    युवती संमेलन
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a
+                href="index.html"
+                data-i18n="nav_home"
+            >
+                Home
+            </a>
+
+            <a
+                href="registration.html"
+                data-i18n="nav_registration"
+            >
+                Registration
+            </a>
+
+            <a
+                href="programs.html"
+                data-i18n="nav_programs"
+            >
+                Programs
+            </a>
+
+            <a
+                href="about.html"
+                data-i18n="nav_about"
+            >
+                About Us
+            </a>
+
+            <a
+                href="contact.html"
+                class="active"
+                data-i18n="nav_contact"
+            >
+                Contact Us
+            </a>
+
+            <select class="language-selector">
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="mr">
+                    मराठी
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+            </select>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ============================================
+         CONTACT PAGE
+    ============================================ -->
+
+    <main class="contact-page">
+
+
+        <!-- ========================================
+             PAGE HEADING
+        ========================================= -->
+
+        <div class="contact-header">
+
+            <h1 data-i18n="contact_title">
+                Contact Us
+            </h1>
+
+            <div class="contact-gold-line"></div>
+
+            <p data-i18n="contact_intro">
+    Connect with us for more information about संवादिनी – युवती संमेलन.
+</p>
+
+        </div>
+
+
+        <!-- ========================================
+             CONTACT SECTIONS
+        ========================================= -->
+
+        <div class="contact-container">
+
+
+            <!-- ====================================
+                 CONTACT PERSONS
+            ====================================== -->
+
+            <section class="contact-card">
+
+                <h2 data-i18n="contact_get_in_touch">
+                    Get in Touch
+                </h2>
+
+
+                <!-- Mugdha Kulkarni -->
+
+                <div class="contact-person">
+
+                    <div class="person-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="12"
+                                cy="7"
+                                r="4"
+                            ></circle>
+
+                            <path
+                                d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                            ></path>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="person-info">
+
+                        <h3>
+                            Mugdha Kulkarni
+                        </h3>
+
+                        <a href="tel:+919579608251">
+                            9579608251
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tanishka Vaidya -->
+
+                <div class="contact-person">
+
+                    <div class="person-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="12"
+                                cy="7"
+                                r="4"
+                            ></circle>
+
+                            <path
+                                d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                            ></path>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="person-info">
+
+                        <h3>
+                            Tanishka Vaidya
+                        </h3>
+
+                        <a href="tel:+918669955121">
+                            8669955121
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Lakshmi Ingale -->
+
+                <div class="contact-person">
+
+                    <div class="person-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="12"
+                                cy="7"
+                                r="4"
+                            ></circle>
+
+                            <path
+                                d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                            ></path>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="person-info">
+
+                        <h3>
+                            Lakshmi Ingale
+                        </h3>
+
+                        <a href="tel:+917249880871">
+                            7249880871
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ====================================
+                 SOCIAL MEDIA
+            ====================================== -->
+
+            <section class="social-card">
+
+                <h2 data-i18n="contact_follow_us">
+                    Follow Us
+                </h2>
+
+
+                <div class="social-links">
+
+
+                    <!-- Instagram -->
+
+                    <a
+                        href="https://www.instagram.com/abvppune?stkn=bjNibnI5enVoNWk2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item"
+                    >
+
+                        <div class="social-icon instagram-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <rect
+                                    x="3"
+                                    y="3"
+                                    width="18"
+                                    height="18"
+                                    rx="5"
+                                ></rect>
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="4"
+                                ></circle>
+
+                                <circle
+                                    cx="17.5"
+                                    cy="6.5"
+                                    r="1"
+                                    fill="white"
+                                    stroke="none"
+                                ></circle>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="social-text">
+
+                            <strong>
+                                Instagram
+                            </strong>
+
+                            <span data-i18n="contact_instagram">
+                                Follow us on Instagram
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- X / Twitter -->
+
+                    <a
+                        href="https://x.com/ABVPPune"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item"
+                    >
+
+                        <div class="social-icon x-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M4 3h4.6l4.1 5.8L17.8 3H20l-6.3 7.4L20.5 21h-4.6l-4.6-6.4L5.9 21H3.7l6.5-7.7L4 3z"
+                                ></path>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="social-text">
+
+                            <strong>
+                                X / Twitter
+                            </strong>
+
+                            <span data-i18n="contact_x">
+                                Follow us on X
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Facebook -->
+
+                    <a
+                        href="https://www.facebook.com/share/1C4gx1sBV3/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item"
+                    >
+
+                        <div class="social-icon facebook-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z"
+                                ></path>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="social-text">
+
+                            <strong>
+                                Facebook
+                            </strong>
+
+                            <span data-i18n="contact_facebook">
+                                Follow us on Facebook
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ============================================
+             BOTTOM MESSAGE
+             KEPT UNCHANGED
+        ============================================ -->
+
+        <div class="contact-message">
+
+    <p>
+        <span data-i18n="contact_bottom">
+            Have questions or need more information?
+        </span>
+
+        <strong data-i18n="contact_reach_out">
+            Feel free to reach out to us.
+        </strong>
+    </p>
+
+</div>
+
+
+    </main>
+
+
+    <!-- Existing Website JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
