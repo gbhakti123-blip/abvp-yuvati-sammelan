@@ -934,3 +934,143 @@ document.addEventListener(
 
     }
 );
+/* =========================================================
+   REGISTRATION FORM SUBMISSION
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const registrationForm =
+            document.getElementById("registration-form");
+
+        const registrationStatus =
+            document.getElementById("registration-status");
+
+        const submitButton =
+            document.getElementById("submit-registration");
+
+
+        if (!registrationForm) {
+            return;
+        }
+
+
+        registrationForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const formData =
+                    new FormData(registrationForm);
+
+
+                const registrationData = {
+                    full_name:
+                        formData.get("full-name"),
+
+                    whatsapp:
+                        formData.get("whatsapp"),
+
+                    profession:
+                        formData.get("profession"),
+
+                    college:
+                        formData.get("college"),
+
+                    education:
+                        formData.get("education"),
+
+                    year:
+                        formData.get("year"),
+
+                    address:
+                        formData.get("address")
+                };
+
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+
+
+                if (registrationStatus) {
+                    registrationStatus.textContent =
+                        "Submitting registration...";
+                }
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "/api/register",
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        registrationData
+                                    )
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        !response.ok ||
+                        !result.success
+                    ) {
+                        throw new Error(
+                            result.message ||
+                            "Registration failed."
+                        );
+                    }
+
+
+                    if (registrationStatus) {
+                        registrationStatus.textContent =
+                            "Registration submitted successfully!";
+                    }
+
+
+                    registrationForm.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Registration error:",
+                        error
+                    );
+
+
+                    if (registrationStatus) {
+                        registrationStatus.textContent =
+                            "Unable to submit registration. Please try again.";
+                    }
+
+                } finally {
+
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+
+                }
+
+            }
+        );
+
+    }
+);
