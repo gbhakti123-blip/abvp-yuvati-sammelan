@@ -176,22 +176,6 @@ def register():
     }), 201
 
 
-# Optional: quick way to see saved registrations in the browser as JSON
-@app.route("/api/registrations", methods=["GET"])
-def list_registrations():
-
-    conn = get_db_connection()
-
-    rows = conn.execute(
-        "SELECT * FROM registrations ORDER BY id DESC"
-    ).fetchall()
-
-    conn.close()
-
-    return jsonify([
-        dict(row)
-        for row in rows
-    ])
 
 
 if __name__ == "__main__":
