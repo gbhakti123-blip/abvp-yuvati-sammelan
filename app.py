@@ -240,6 +240,30 @@ def serve_index():
         "index.html"
     )
 
+# ---------------------------------------------------------------
+# SEO FILES
+# ---------------------------------------------------------------
+
+@app.route("/robots.txt")
+def robots_txt():
+
+    return send_from_directory(
+        app.static_folder,
+        "robots.txt",
+        mimetype="text/plain"
+    )
+
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+
+    return send_from_directory(
+        app.static_folder,
+        "sitemap.xml",
+        mimetype="application/xml"
+    )
+
+
 
 # ---------------------------------------------------------------
 # SERVE STATIC FILES
