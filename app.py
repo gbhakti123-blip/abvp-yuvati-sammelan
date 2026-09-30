@@ -246,12 +246,11 @@ def serve_index():
 
 @app.route("/robots.txt")
 def robots_txt():
+    return """User-agent: *
+Allow: /
 
-    return send_from_directory(
-        app.static_folder,
-        "robots.txt",
-        mimetype="text/plain"
-    )
+Sitemap: https://abvp-yuvati-sammelan.onrender.com/sitemap.xml
+""", 200, {"Content-Type": "text/plain"}
 
 
 @app.route("/sitemap.xml")
