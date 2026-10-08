@@ -25,7 +25,7 @@ const translations = {
 
         event_organizer: "Akhil Bharatiya Vidyarthi Parishad",
 
-        hero_title: "Yuvati Sammelan",
+        hero_title: "Samvadini – Yuvati Sammelan",
 
         hero_location: "Kothrud Region",
 
@@ -280,7 +280,7 @@ const translations = {
             "अखिल भारतीय विद्यार्थी परिषद",
 
         hero_title:
-            "युवती संमेलन",
+            "संवादिनी – युवती संमेलन",
 
         hero_location:
             "कोथरूड भाग",
@@ -537,7 +537,7 @@ const translations = {
             "अखिल भारतीय विद्यार्थी परिषद",
 
         hero_title:
-            "युवती सम्मेलन",
+            "संवादिनी – युवती सम्मेलन",
 
         hero_location:
             "कोथरूड क्षेत्र",
