@@ -934,6 +934,8 @@ document.addEventListener(
 
     }
 );
+
+
 /* =========================================================
    REGISTRATION FORM SUBMISSION
 ========================================================= */
@@ -974,6 +976,9 @@ document.addEventListener(
 
                     whatsapp:
                         formData.get("whatsapp"),
+
+                    email:
+                        formData.get("email"),
 
                     profession:
                         formData.get("profession"),
