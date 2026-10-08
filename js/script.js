@@ -71,6 +71,9 @@ const translations = {
         label_whatsapp:
             "WhatsApp Number",
 
+        label_email:
+            "Email ID",
+
         label_profession:
             "Profession",
 
@@ -91,6 +94,9 @@ const translations = {
 
         ph_whatsapp:
             "Enter your WhatsApp number",
+
+        ph_email:
+            "Enter your email ID",
 
         ph_profession:
             "Enter your profession",
@@ -322,6 +328,9 @@ const translations = {
         label_whatsapp:
             "व्हॉट्सअॅप क्रमांक",
 
+        label_email:
+            "ईमेल आयडी",
+
         label_profession:
             "व्यवसाय",
 
@@ -342,6 +351,9 @@ const translations = {
 
         ph_whatsapp:
             "आपला व्हॉट्सअॅप क्रमांक लिहा",
+
+        ph_email:
+            "आपला ईमेल आयडी लिहा",
 
         ph_profession:
             "आपला व्यवसाय लिहा",
@@ -573,6 +585,9 @@ const translations = {
         label_whatsapp:
             "व्हाट्सऐप नंबर",
 
+        label_email:
+            "ईमेल आईडी",
+
         label_profession:
             "व्यवसाय",
 
@@ -593,6 +608,9 @@ const translations = {
 
         ph_whatsapp:
             "अपना व्हाट्सऐप नंबर दर्ज करें",
+
+        ph_email:
+            "अपना ईमेल आईडी दर्ज करें",
 
         ph_profession:
             "अपना व्यवसाय दर्ज करें",
@@ -761,17 +779,9 @@ function setupLanguageSelector() {
 
     languageSelectors.forEach(function(selector) {
 
-        /*
-         * Set the selector to the currently
-         * selected language.
-         */
         selector.value = currentLanguage;
 
 
-        /*
-         * Prevent the same event listener
-         * from being added more than once.
-         */
         if (selector.dataset.languageReady === "true") {
             return;
         }
@@ -780,17 +790,11 @@ function setupLanguageSelector() {
         selector.dataset.languageReady = "true";
 
 
-        /*
-         * When the user changes language
-         */
         selector.addEventListener("change", function() {
 
             const selectedLanguage = this.value;
 
 
-            /*
-             * Make sure the selected language exists.
-             */
             if (!translations[selectedLanguage]) {
                 return;
             }
@@ -799,19 +803,12 @@ function setupLanguageSelector() {
             currentLanguage = selectedLanguage;
 
 
-            /*
-             * Save language so it remains selected
-             * when navigating between pages.
-             */
             localStorage.setItem(
                 "selectedLanguage",
                 selectedLanguage
             );
 
 
-            /*
-             * Apply the new language.
-             */
             applyLanguage(selectedLanguage);
 
         });
@@ -827,10 +824,6 @@ function setupLanguageSelector() {
 
 function applyLanguage(language) {
 
-    /*
-     * If an invalid language somehow gets selected,
-     * fall back to English.
-     */
     if (!translations[language]) {
         language = "en";
     }
@@ -843,10 +836,6 @@ function applyLanguage(language) {
         translations[language];
 
 
-    /*
-     * Translate normal text elements
-     * using data-i18n.
-     */
     document
         .querySelectorAll("[data-i18n]")
         .forEach(function(element) {
@@ -865,10 +854,6 @@ function applyLanguage(language) {
         });
 
 
-    /*
-     * Translate placeholders
-     * using data-i18n-placeholder.
-     */
     document
         .querySelectorAll("[data-i18n-placeholder]")
         .forEach(function(element) {
@@ -889,10 +874,6 @@ function applyLanguage(language) {
         });
 
 
-    /*
-     * Keep every language selector
-     * synchronized.
-     */
     document
         .querySelectorAll(".language-selector")
         .forEach(function(selector) {
@@ -902,16 +883,10 @@ function applyLanguage(language) {
         });
 
 
-    /*
-     * Update the HTML language attribute.
-     */
     document.documentElement.lang =
         language;
 
 
-    /*
-     * Save the selected language.
-     */
     localStorage.setItem(
         "selectedLanguage",
         language
@@ -947,11 +922,13 @@ document.addEventListener(
         const registrationForm =
             document.getElementById("registration-form");
 
+
         const registrationStatus =
             document.getElementById("registration-status");
 
+
         const submitButton =
-            document.getElementById("submit-registration");
+            document.querySelector(".register-button");
 
 
         if (!registrationForm) {
@@ -971,6 +948,7 @@ document.addEventListener(
 
 
                 const registrationData = {
+
                     full_name:
                         formData.get("full-name"),
 
@@ -994,17 +972,22 @@ document.addEventListener(
 
                     address:
                         formData.get("address")
+
                 };
 
 
                 if (submitButton) {
+
                     submitButton.disabled = true;
+
                 }
 
 
                 if (registrationStatus) {
+
                     registrationStatus.textContent =
                         "Submitting registration...";
+
                 }
 
 
@@ -1037,16 +1020,20 @@ document.addEventListener(
                         !response.ok ||
                         !result.success
                     ) {
+
                         throw new Error(
                             result.message ||
                             "Registration failed."
                         );
+
                     }
 
 
                     if (registrationStatus) {
+
                         registrationStatus.textContent =
                             "Registration submitted successfully!";
+
                     }
 
 
@@ -1062,14 +1049,18 @@ document.addEventListener(
 
 
                     if (registrationStatus) {
+
                         registrationStatus.textContent =
                             "Unable to submit registration. Please try again.";
+
                     }
 
                 } finally {
 
                     if (submitButton) {
+
                         submitButton.disabled = false;
+
                     }
 
                 }
